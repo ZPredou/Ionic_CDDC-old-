@@ -29,12 +29,12 @@ export class DetailPage {
 
   constructor(public nav: NavController, public navParams: NavParams, private iab: InAppBrowser, private vibration: Vibration, private socialSharing: SocialSharing) {
     this.navParams   = navParams;
-    this.title       = this.navParams.get('contact').title;
-    this.description = this.navParams.get('contact').description;
-    this.image       = this.navParams.get('contact').image;
-    this.author      = this.navParams.get('contact').author;
-    this.url         = this.navParams.get('contact').url;
-    this.sound       = this.navParams.get('contact').sound;
+    this.title       = this.navParams.get('oeuvre').title;
+    this.description = this.navParams.get('oeuvre').description;
+    this.image       = this.navParams.get('oeuvre').image;
+    this.author      = this.navParams.get('oeuvre').author;
+    this.url         = this.navParams.get('oeuvre').url;
+    this.sound       = this.navParams.get('oeuvre').sound;
   }
   private vibrate(){
     this.vibration.vibrate([30]);

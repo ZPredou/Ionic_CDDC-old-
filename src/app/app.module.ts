@@ -1,5 +1,8 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule }      from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
@@ -21,6 +24,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -34,7 +38,9 @@ import { SocialSharing } from '@ionic-native/social-sharing';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -55,7 +61,9 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     OneSignal,
     HeaderColor,
     InAppBrowser,
-    SocialSharing
+    SocialSharing,
+    HttpClient,
+    HttpClientModule
   ]
 })
 export class AppModule {}
