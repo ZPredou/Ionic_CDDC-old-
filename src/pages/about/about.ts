@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { DetailPage } from '../detail/detail';
+import { ContactPage } from '../contact/contact';
+import { PlansPage } from '../plans/plans';
 
 
 
@@ -52,23 +54,10 @@ export class AboutPage {
       },
     ];
   }
-  public goToDetail(contact){
-    this.nav.push(DetailPage , {
-      contact: contact
-    });
+  public goToOeuvres(){
+    this.nav.push(ContactPage);
   }
-  public async scanBarcode() {
-    await this.barcode.scan()
-      .then((result) => {
-        for (var i = 0, len = this.contacts.length; i < len; i++) {
-          if(result.text==this.contacts[i].id)
-          {
-            this.goToDetail(this.contacts[i]);
-          }
-        }
-      })
-      .catch((error) => {
-        alert(error);
-      })
+  public goToPlans(){
+    this.nav.push(PlansPage);
   }
 }

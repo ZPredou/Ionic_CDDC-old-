@@ -8,6 +8,8 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DetailPage } from '../pages/detail/detail';
+import { SchoolPage } from '../pages/school/school';
+import { PlansPage } from '../pages/plans/plans';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +28,9 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     ContactPage,
     HomePage,
     TabsPage,
-    DetailPage
+    DetailPage,
+    SchoolPage,
+    PlansPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,9 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     ContactPage,
     HomePage,
     TabsPage,
-    DetailPage
+    DetailPage,
+    SchoolPage,
+    PlansPage
   ],
   providers: [
     BarcodeScanner,

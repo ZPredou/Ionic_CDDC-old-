@@ -1,19 +1,23 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      <div style="color:black;">L'aventure QR</div>
+      <div style="color:black;">Visite Virtuelle</div>
     </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
   <blockquote>
-    <p>“Emplacement pour une quote / phrase ”</p>
-    <p class="author">- Anonyme</p>
+    <p>La Visite virtuelle</p>
+    <p class="author"></p>
   </blockquote>
   <ion-row>
-    <button ion-button center small color="danger" (click)="scanBarcode()" icon-start>
-      <ion-icon name='search'></ion-icon>
-      Cherchez les codes cachés !
+    <button ion-button center color="danger" (click)="goToPlans()" icon-start>
+      <ion-icon name='navigate'></ion-icon>
+      La mise en Espace
+    </button>
+    <button ion-button center color="danger" (click)="goToOeuvres()" icon-start>
+      <ion-icon name='photos'></ion-icon>
+      Les oeuvres
     </button>
   </ion-row>
 </ion-content>
