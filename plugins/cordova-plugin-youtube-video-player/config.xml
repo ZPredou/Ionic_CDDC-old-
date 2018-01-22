@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.bunkerpalace.YoutubVideoPlayerProject" version="1.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>YoutubeVideoPlayerProject</name>
+    <description>
+        Sample Cordova You Tube Player App.
+    </description>
+    <preference name="YouTubeDataApiKey" value="AIzaSyCsDQdtn7Fh-zI3B9d0RXL6mL-0WmZRZf8" />
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

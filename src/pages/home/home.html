@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="homeBack">
+  <!-- Real floating action button, fixed. It will not scroll with the content -->
+  <ion-fab top right edge #fab1>
+    <button ion-fab mini color="danger"><ion-icon name="heart"></ion-icon></button>
+    <ion-fab-list #fabList>
+      <div *ngIf="fabList.classList.contains('fab-list-active')" class="backdrop" (click)="fab1.close();"></div>
+      <a button ion-fab href="https://fr-fr.facebook.com/fondationfrances/">
+        <ion-icon name="logo-facebook"></ion-icon>
+        <div class="label">Facebook</div>
+      </a>
+      <a button ion-fab href="https://twitter.com/FFrancesArt">
+        <ion-icon name="logo-twitter"></ion-icon>
+        <div class="label">Twitter</div>
+      </a>
+      <a button ion-fab href="tel:0688360209" clear>
+        <ion-icon name="call"></ion-icon>
+        <div class="label">Besoin d'info ?</div>
+      </a>
+    </ion-fab-list>
+  </ion-fab>
+  <blockquote>
+    <p class="title">La Fabrique de l'Esprit</p>
+    <p class="author">-by William Decourty    </p>
+  </blockquote>
+</ion-content>

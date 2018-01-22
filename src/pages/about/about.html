@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <div style="color:black;">L'aventure QR</div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <blockquote>
+    <p>“Emplacement pour une quote / phrase ”</p>
+    <p class="author">- Anonyme</p>
+  </blockquote>
+  <ion-row>
+    <button ion-button center small color="danger" (click)="scanBarcode()" icon-start>
+      <ion-icon name='search'></ion-icon>
+      Cherchez les codes cachés !
+    </button>
+  </ion-row>
+</ion-content>
