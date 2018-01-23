@@ -98,6 +98,9 @@ DetailPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlansPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__detail_detail__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -109,28 +112,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the PlansPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
+
+
 let PlansPage = class PlansPage {
-    constructor(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
+    constructor(nav, navParams, vibration, http) {
+        this.nav = nav;
         this.navParams = navParams;
+        this.vibration = vibration;
+        this.http = http;
+        this.oeuvres = [];
+        this.nav = nav;
     }
     ionViewDidLoad() {
         console.log('ionViewDidLoad PlansPage');
     }
+    ngOnInit() {
+        this.http.get('./assets/oeuvres.json').subscribe(data => {
+            this.oeuvres = data['oeuvres'];
+        });
+    }
+    vibrate() {
+        this.vibration.vibrate([30]);
+    }
+    goToDetail(oeuvre) {
+        this.nav.push(__WEBPACK_IMPORTED_MODULE_3__detail_detail__["a" /* DetailPage */], {
+            oeuvre: oeuvre
+        });
+    }
 };
 PlansPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-plans',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/plans/plans.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>plans</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <img src="/assets/imgs/floor-plan-graphic-example.gif" alt="two dots test" width="313" height="285" usemap="#dots" />\n  <map name="dots">\n    <map name="dots" id="dots">\n      <map name="Map" id="Map">\n          <area alt="" title="" href="random.html" shape="circle" coords="86,75,50" />\n          <area alt="" title="" href="random.htm" shape="circle" coords="51,229,50" />\n          <area alt="" title="" href="randomtest.htm" shape="circle" coords="156,230,50" />\n          <area alt="" title="" href="aze.htm" shape="circle" coords="266,180,50" />\n      </map>\n    </map>\n  </map>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/plans/plans.html"*/,
+        selector: 'page-plans',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/plans/plans.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>plans</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <img src="/assets/imgs/floor-plan-graphic-example.gif" alt="two dots test" width="313" height="285" usemap="#dots" />\n  <map name="dots">\n    <map name="dots" id="dots">\n      <map name="Map" id="Map">\n          <area alt="" title="" (click)="goToDetail(oeuvres[0]); vibrate()" shape="circle" coords="86,75,50" />\n          <area alt="" title="" (click)="goToDetail(oeuvres[1]); vibrate()" shape="circle" coords="51,229,50" />\n          <area alt="" title="" (click)="goToDetail(oeuvres[2]); vibrate()" shape="circle" coords="156,230,50" />\n          <area alt="" title="" (click)="goToDetail(oeuvres[3]); vibrate()" shape="circle" coords="266,180,50" />\n      </map>\n    </map>\n  </map>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/plans/plans.html"*/,
+        providers: [[__WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */]]]
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */]) === "function" && _d || Object])
 ], PlansPage);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=plans.js.map
 
 /***/ }),
