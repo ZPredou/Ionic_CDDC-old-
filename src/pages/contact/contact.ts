@@ -20,7 +20,6 @@ export class ContactPage implements OnInit {
   ngOnInit(){
       this.http.get('./assets/oeuvres.json').subscribe(data => {
         this.oeuvres = data['oeuvres'];
-        console.log(this.oeuvres);
     });
   }
   private vibrate(){

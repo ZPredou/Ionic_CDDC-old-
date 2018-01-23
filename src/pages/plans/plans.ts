@@ -21,5 +21,7 @@ export class PlansPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PlansPage');
   }
-
+  area1(){
+    
+  }
 }

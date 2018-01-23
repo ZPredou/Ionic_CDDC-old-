@@ -8,7 +8,7 @@
 
 <ion-content class="card-background-page ">
   <div *ngIf="oeuvres">
-    <ion-card (click)="goToDetail(oeuvre); vibrate();" *ngFor="let oeuvre of this.oeuvres">
+    <ion-card (click)="goToDetail(oeuvre); vibrate();" *ngFor="let oeuvre of oeuvres">
       <img src={{oeuvre.image}}/>
       <div class="card-title">{{oeuvre.title}}</div>
       <div class="card-subtitle">{{oeuvre.author}}</div>

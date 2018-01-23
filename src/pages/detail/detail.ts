@@ -53,7 +53,6 @@ export class DetailPage {
       console.log("shareViaTwitter: Success");
     }).catch(() => {
       console.error("shareViaTwitter: failed");
-      console.log(this.image)
     });
   }
   fbShare(){
@@ -61,7 +60,6 @@ export class DetailPage {
       console.log("shareViaFacebook: Success");
     }).catch(() => {
       console.error("shareViaFacebook: failed");
-      console.log(this.image)
     });
   }
   Share() {
