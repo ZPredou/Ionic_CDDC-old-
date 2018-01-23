@@ -19,7 +19,6 @@ export class PlansPage implements OnInit{
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PlansPage');
   }
   ngOnInit(){
       this.http.get('./assets/oeuvres.json').subscribe(data => {
