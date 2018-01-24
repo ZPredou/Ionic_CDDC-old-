@@ -15,8 +15,9 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 .scroll-content {
-  background: url("../assets/imgs/bg2.jpg");
-  background-size:cover;
+  //background: url("../assets/imgs/bg2.jpg");
+  //background-size:cover;
+  background-color: #fff;
 }
 .toolbar-background {
   background: url("../assets/imgs/bg2.jpg");
@@ -29,7 +30,7 @@
   opacity:0.8;
 }
 body{
-  font-family: 'Robot' !important;
+
 }
 .tabs-md .tab-button[aria-selected=true] {
     color: white !important; /*your  text color */
