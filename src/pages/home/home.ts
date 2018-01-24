@@ -10,12 +10,4 @@ import { ToastController } from 'ionic-angular';
 export class HomePage {
 
   constructor(public navCtrl: NavController,private toastCtrl: ToastController) {}
-  private presentToast() {
-    let toast = this.toastCtrl.create({
-      message: 'Une POP UP dans l application pour annoncer quelque chose d important (ou pas!)',
-      duration: 3000,
-      position: 'top'
-    });
-    toast.present();
-  }
 }
