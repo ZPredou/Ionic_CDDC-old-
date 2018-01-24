@@ -17,7 +17,7 @@
 .scroll-content {
   //background: url("../assets/imgs/bg2.jpg");
   background-size:cover;
-  background-color:#fff;
+
 }
 .toolbar-background {
   //background: url("../assets/imgs/bg2.jpg");
@@ -357,4 +357,7 @@ super-tabs-toolbar {
 
   }
 
+}
+ion-fab{
+  z-index: 99999999999999;
 }

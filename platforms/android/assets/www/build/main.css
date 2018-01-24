@@ -26252,7 +26252,6 @@ super-tabs-toolbar > ion-toolbar.toolbar.scroll-tabs .tab-buttons-container .ind
 
 .scroll-content {
   background-size: cover;
-  background-color: #fff;
 }
 
 .tabs-md .tab-button[aria-selected=true] {
@@ -26565,6 +26564,10 @@ super-tabs-toolbar > ion-toolbar.toolbar.scroll-tabs .tab-buttons-container .tab
 super-tabs-toolbar > ion-toolbar.toolbar.scroll-tabs .tab-buttons-container .indicator {
   position: relative;
   margin-top: -2px;
+}
+
+ion-fab {
+  z-index: 99999999999999;
 }
 
 .card-background-page ion-card {

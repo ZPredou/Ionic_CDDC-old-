@@ -26252,7 +26252,6 @@ super-tabs-toolbar > ion-toolbar.toolbar.scroll-tabs .tab-buttons-container .ind
 
 .scroll-content {
   background-size: cover;
-  background-color: #fff;
 }
 
 .tabs-md .tab-button[aria-selected=true] {
@@ -26567,6 +26566,10 @@ super-tabs-toolbar > ion-toolbar.toolbar.scroll-tabs .tab-buttons-container .ind
   margin-top: -2px;
 }
 
+ion-fab {
+  z-index: 99999999999999;
+}
+
 .card-background-page ion-card {
   position: relative;
   text-align: center;
@@ -26760,4 +26763,21 @@ p > .undertext {
   line-height: 24px;
   margin: 0 0 24px;
   text-align: justify;
+}
+
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  -webkit-transition: 0.09s all linear;
+  transition: 0.09s all linear;
+}
+
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
 }

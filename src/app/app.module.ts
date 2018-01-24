@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule }      from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -43,7 +44,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     HttpClientModule,
     HttpModule,
     SuperTabsModule.forRoot(),
-    SuperTabsModule
+    SuperTabsModule,
+    BrowserAnimationsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
