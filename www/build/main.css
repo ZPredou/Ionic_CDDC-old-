@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=EB+Garamond|Cardo:400italic);
 super-tabs {
   height: 100%;
   display: -webkit-box;
@@ -26252,6 +26251,7 @@ super-tabs-toolbar > ion-toolbar.toolbar.scroll-tabs .tab-buttons-container .ind
 }
 
 .scroll-content {
+  background-size: cover;
   background-color: #fff;
 }
 
@@ -26272,6 +26272,7 @@ super-tabs-toolbar > ion-toolbar.toolbar.scroll-tabs .tab-buttons-container .ind
 
 p {
   text-align: justify;
+  font-size: 14px;
 }
 
 super-tabs {
@@ -26504,6 +26505,8 @@ super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons sup
 super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button.title-and-icon {
   height: 72px;
   padding-top: 8px;
+  -webkit-transition: all 0.5;
+  transition: all 0.5;
 }
 
 super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button.title-and-icon ion-icon {
@@ -26539,8 +26542,9 @@ super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .indicator {
 }
 
 super-tabs-toolbar > ion-toolbar.toolbar .selected {
-  background-color: red;
-  color: white;
+  -webkit-transition: all 0.5;
+  transition: all 0.5;
+  color: red;
 }
 
 super-tabs-toolbar > ion-toolbar.toolbar.scroll-tabs .tab-buttons-container .tab-buttons {
@@ -26749,86 +26753,11 @@ h2 {
   text-align: center;
 }
 
-p .title {
+p > .undertext {
   color: #685206;
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 11px;
+  font-size: 15px;
   line-height: 24px;
   margin: 0 0 24px;
   text-align: justify;
-  text-justify: inter-word;
-}
-
-.wrapper {
-  max-width: 53.33rem;
-  padding-top: 50%;
-  position: relative;
-  z-index: 10;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  top: 50%;
-  text-align: center;
-}
-
-.ls-medium {
-  letter-spacing: 4px;
-}
-
-.ls-large {
-  letter-spacing: 8px;
-}
-
-.ls-xlarge {
-  letter-spacing: 12px;
-}
-
-.bold {
-  font-weight: 700;
-}
-
-.thin {
-  font-weight: 100;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-.open-sans {
-  font-family: 'Open Sans';
-}
-
-.lato {
-  font-family: 'Lato';
-}
-
-.gamma {
-  font-size: 2rem;
-  /* 36 / 18 = 2 */
-  margin-bottom: 0.825rem;
-}
-
-.epsilon {
-  font-size: 1.16667rem;
-  /* 21 / 18 = 1.1667 */
-  margin-bottom: 1.41429rem;
-}
-
-.tera {
-  font-size: 6.5rem;
-  /* 117 / 18 = 6.5 */
-  margin-bottom: 0.25385rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1;
-  margin-top: 0;
-  color: black;
-  display: inline-block;
-  position: relative;
 }

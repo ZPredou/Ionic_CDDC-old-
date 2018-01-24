@@ -16,8 +16,8 @@
 // automatically applied to the <body> element in the app.
 .scroll-content {
   //background: url("../assets/imgs/bg2.jpg");
-  //background-size:cover;
-  background-color: #fff;
+  background-size:cover;
+  background-color:#fff;
 }
 .toolbar-background {
   //background: url("../assets/imgs/bg2.jpg");
@@ -44,6 +44,7 @@ body{
 }
 p{
   text-align: justify;
+  font-size: 14px;
 }
 //
 // SuperTabs styles
@@ -287,6 +288,7 @@ super-tabs-toolbar {
           &.title-and-icon {
             height: 72px;
             padding-top: 8px;
+            transition: all 0.5;
 
             ion-icon {
               margin-bottom: 10px;
@@ -326,8 +328,8 @@ super-tabs-toolbar {
 
     }
     .selected {
-      background-color:red;
-      color:white;
+      transition: all 0.5;
+      color:red;
     }
     &.scroll-tabs {
       .tab-buttons-container {
