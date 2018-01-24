@@ -46,7 +46,7 @@
             <param name="android-package" value="com.bunkerpalace.cordova.YoutubeVideoPlayer" />
         </feature>
     </widget>
-    <name>Ionic_Exposition</name>
+    <name>Ionic CDDC</name>
     <description>An awesome Ionic/Cordova app.</description>
     <allow-navigation href="*" />
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>

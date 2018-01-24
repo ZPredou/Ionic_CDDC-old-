@@ -22,6 +22,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { HeaderColor } from '@ionic-native/header-color';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { SuperTabsModule } from 'ionic2-super-tabs';
 
 
 
@@ -40,7 +41,9 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    SuperTabsModule.forRoot(),
+    SuperTabsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

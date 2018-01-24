@@ -1,5 +1,5 @@
-<ion-tabs preloadTabs (ionChange)="vibrate()" >
-  <ion-tab (click)="vibrate()" [root]="tab1Root" tabTitle="Accueil" tabIcon="home"></ion-tab>
-  <ion-tab (click)="vibrate()" [root]="tab3Root" tabTitle="Le collège" tabIcon="school"></ion-tab>
-  <ion-tab (click)="vibrate()" [root]="tab2Root" tabTitle="Exposition virtuelle" tabIcon="navigate"></ion-tab>
-</ion-tabs>
+<super-tabs tabsPlacement='bottom' (ionChange)="vibrate()" >
+  <super-tab (click)="vibrate()" [root]="tab1Root" title="Accueil" icon="home"></super-tab>
+  <super-tab (click)="vibrate()" [root]="tab3Root" title="Le collège" icon="school"></super-tab>
+  <super-tab (click)="vibrate()" [root]="tab2Root" title="L'Exposition" icon="navigate"></super-tab>
+</super-tabs>
