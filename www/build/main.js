@@ -33,21 +33,21 @@ let PlansPage = class PlansPage {
         this.oeuvres = [];
         this.groups = [];
         this.nav = nav;
-        for (let i = 0; i < 4; i++) {
-            this.groups[i] = {
-                active: false,
-                id: i,
-                items: []
-            };
-            for (var j = 0; j < 3; j++) {
-                this.groups[i].items.push(i + '-' + j);
-            }
-        }
+        //   for(let i = 0; i < 4; i++){
+        //   this.groups[i]={
+        //     active: false,
+        //     id: i,
+        //     items: []
+        //   }
+        //   for (var j=0; j<3; j++) {
+        //     this.groups[i].items.push(i + '-' + j);
+        //   }
+        // }
     }
-    toggleGroup(group) {
-        group.active = !group.active;
-        console.log(group);
-    }
+    // toggleGroup(group){
+    //   group.active = !group.active
+    //   console.log(group)
+    // }
     ngOnInit() {
         this.http.get('./assets/oeuvres.json').subscribe(data => {
             this.oeuvres = data['oeuvres'];
@@ -64,7 +64,7 @@ let PlansPage = class PlansPage {
 };
 PlansPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-plans',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/plans/plans.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>plans</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <img src="./assets/imgs/floor-plan-graphic-example.gif" alt="two dots test" width="313" height="285" usemap="#dots" />\n    <map name="dots" id="dots">\n          <area alt="" title="" (click)="goToDetail(oeuvres[0]); vibrate()" shape="circle" coords="86,75,50" />\n          <area alt="" title="" (click)="goToDetail(oeuvres[1]); vibrate()" shape="circle" coords="51,229,50" />\n          <area alt="" title="" (click)="goToDetail(oeuvres[2]); vibrate()" shape="circle" coords="156,230,50" />\n          <area alt="" title="" (click)="goToDetail(oeuvres[3]); vibrate()" shape="circle" coords="266,180,50" />\n    </map>\n    <ion-item-group *ngFor="let group of groups" >\n      <ion-item-divider color="light" (click)="toggleGroup(group)">\n        Etage {{group.id}}\n        <ion-icon item-left name="add"></ion-icon>\n      </ion-item-divider>\n      <ion-item *ngFor="let item of group.items" [@expand]="group.active">{{item}}</ion-item>\n    </ion-item-group>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/plans/plans.html"*/,
+        selector: 'page-plans',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/plans/plans.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>plans</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <img src="./assets/imgs/floor-plan-graphic-example.gif" alt="two dots test" width="313" height="285" usemap="#dots" />\n    <map name="dots" id="dots">\n          <area alt="" title="" (click)="goToDetail(oeuvres[0]); vibrate()" shape="circle" coords="86,75,50" />\n          <area alt="" title="" (click)="goToDetail(oeuvres[1]); vibrate()" shape="circle" coords="51,229,50" />\n          <area alt="" title="" (click)="goToDetail(oeuvres[2]); vibrate()" shape="circle" coords="156,230,50" />\n          <area alt="" title="" (click)="goToDetail(oeuvres[3]); vibrate()" shape="circle" coords="266,180,50" />\n    </map>\n    <!-- Accordion menu yet unused.\n    <ion-item-group *ngFor="let group of groups" >\n      <ion-item-divider color="light" (click)="toggleGroup(group)">\n        Etage {{group.id}}\n        <ion-icon item-left name="add"></ion-icon>\n      </ion-item-divider>\n      <ion-item *ngFor="let item of group.items" [@expand]="group.active">{{item}}</ion-item>\n    </ion-item-group>-->\n\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/plans/plans.html"*/,
         styles: [
             `
     .item-block{
@@ -114,12 +114,12 @@ let SchoolPage = class SchoolPage {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    ionViewDidLoad() {
+    ngOnInit() {
     }
 };
 SchoolPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-school',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/school/school.html"*/'<!--\n  Generated template for the SchoolPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title style="color:black">Le collège ...</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/school/school.html"*/,
+        selector: 'page-school',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/school/school.html"*/'<!--\n  Generated template for the SchoolPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header hidden>\n\n  <ion-navbar>\n    <ion-title style="color:black">Le collège ...</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="no-scroll">\n  <header>\n    <h1 class="playfair">Collège Abel Didelet</h1>\n    <h2>Enseignement secondaire à Estrées-Saint-Denis</h2>\n  </header>\n  <h3 class="schoolDesc">Vous présente avec envie son exposition virtuelle dans le cadre de son contrat départemental de developpement culturel avec la Fabrique de l\'Esprit.</h3>\n  <video autoplay loop class="bg-vid" muted webkit-playsinline>\n      <source src="assets/videos/SVI_VDef.webm" type=\'video/webm\'>\n  </video>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/school/school.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
 ], SchoolPage);
@@ -150,7 +150,7 @@ webpackEmptyAsyncContext.id = 120;
 
 var map = {
 	"../pages/detail/detail.module": [
-		312,
+		313,
 		2
 	],
 	"../pages/plans/plans.module": [
@@ -158,7 +158,7 @@ var map = {
 		1
 	],
 	"../pages/school/school.module": [
-		313,
+		312,
 		0
 	]
 };
@@ -269,7 +269,7 @@ let AboutPage = class AboutPage {
 };
 AboutPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-about',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/about/about.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      <div style="color:black;">Exposition Virtuelle</div>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <blockquote>\n    <p>L\'exposition virtuelle</p>\n    <p class="author"></p>\n  </blockquote>\n  <ion-row>\n    <button ion-button center color="danger" (click)="goToPlans()" icon-start>\n      <ion-icon name=\'navigate\'></ion-icon>\n      La mise en Espace\n    </button>\n    <button ion-button center color="danger" (click)="goToOeuvres()" icon-start>\n      <ion-icon name=\'photos\'></ion-icon>\n      Les oeuvres\n    </button>\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/about/about.html"*/,
+        selector: 'page-about',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/about/about.html"*/'<ion-header hidden>\n  <ion-navbar>\n    <ion-title>\n      <div style="color:black;">Exposition Virtuelle</div>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="card-background-page">\n  <header>\n    <h1 class="playfair" style="color:black!important">L\'éxposition virtuelle</h1>\n  </header>\n    <ion-card (click)="goToPlans()" block>\n      <img class="darken small" src="assets/imgs/compass.jpg">\n      <div class="card-title">L\'éspace</div>\n      <div class="card-subtitle">Un accès aux oeuvres via un plan</div>\n    </ion-card>\n    <ion-card class="card-background-page" (click)="goToOeuvres()" block>\n      <img class="darken small" src="assets/imgs/americathebeautiful.jpg">\n      <div class="card-title">Les oeuvres</div>\n      <div class="card-subtitle">Un accès direct aux différentes oeuvres</div>\n    </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/about/about.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_2__ionic_native_barcode_scanner__["a" /* BarcodeScanner */]]
     }),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
@@ -465,8 +465,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                 links: [
                     { loadChildren: '../pages/plans/plans.module#PlansPageModule', name: 'PlansPage', segment: 'plans', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/detail/detail.module#DetailPageModule', name: 'DetailPage', segment: 'detail', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/school/school.module#SchoolPageModule', name: 'SchoolPage', segment: 'school', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/school/school.module#SchoolPageModule', name: 'SchoolPage', segment: 'school', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/detail/detail.module#DetailPageModule', name: 'DetailPage', segment: 'detail', priority: 'low', defaultHistory: [] }
                 ]
             }),
             __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClientModule */],
