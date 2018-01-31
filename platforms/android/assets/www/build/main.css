@@ -7133,7 +7133,7 @@ ion-card-content {
 .card-ios p {
   margin: 0 0 2px;
   font-size: 1.4rem;
-  color: #666;
+  color: black;
 }
 
 .card-ios + ion-card {
@@ -7483,14 +7483,14 @@ ion-card-content {
   margin: 0 0 2px;
   font-size: 2.4rem;
   font-weight: normal;
-  color: #222;
+  color: black;
 }
 
 .card-md h2 {
   margin: 2px 0;
   font-size: 1.6rem;
   font-weight: normal;
-  color: #222;
+  color: black;
 }
 
 .card-md h3,
@@ -7500,7 +7500,7 @@ ion-card-content {
   margin: 2px 0;
   font-size: 1.4rem;
   font-weight: normal;
-  color: #222;
+  color: black;
 }
 
 .card-md p {
@@ -7508,7 +7508,7 @@ ion-card-content {
   font-size: 1.4rem;
   font-weight: normal;
   line-height: 1.5;
-  color: #222;
+  color: black;
 }
 
 .card-md + ion-card {
@@ -7888,14 +7888,14 @@ ion-card-content {
   margin: 0 0 2px;
   font-size: 2.4rem;
   font-weight: normal;
-  color: #222;
+  color: black;
 }
 
 .card-wp h2 {
   margin: 2px 0;
   font-size: 1.6rem;
   font-weight: normal;
-  color: #222;
+  color: black;
 }
 
 .card-wp h3,
@@ -7905,7 +7905,7 @@ ion-card-content {
   margin: 2px 0;
   font-size: 1.4rem;
   font-weight: normal;
-  color: #222;
+  color: black;
 }
 
 .card-wp p {
@@ -7913,7 +7913,7 @@ ion-card-content {
   font-size: 1.4rem;
   font-weight: normal;
   line-height: 1.5;
-  color: #222;
+  color: black;
 }
 
 .card-wp + ion-card {
@@ -26570,14 +26570,6 @@ ion-fab {
   z-index: 99999999999999;
 }
 
-body.keyboard-is-open super-tabs-toolbar {
-  display: none;
-}
-
-body.keyboard-is-open super-tabs-container {
-  margin-bottom: 48px !important;
-}
-
 img.darken {
   -webkit-filter: brightness(50%);
   -moz-filter: brightness(50%);
@@ -26614,6 +26606,26 @@ img.small {
   top: 58%;
   width: 100%;
   color: #fff;
+}
+
+.emptyState {
+  margin-top: 30%;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-family: "Lato",sans-serif;
+}
+
+ion-card-content {
+  color: black;
+}
+
+ion-card-header {
+  color: black;
+}
+
+.larger {
+  font-size: 100px;
 }
 
 audio {

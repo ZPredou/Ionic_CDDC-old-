@@ -16,7 +16,7 @@
   </div>
   <div *ngIf="noneSelected">
     <div class="emptyState">
-      <ion-card>
+      <ion-card *ngIf="!noneSelected">
         <ion-card-header>
           <ion-row>
             <ion-icon class="larger" name="sad"></ion-icon>
