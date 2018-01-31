@@ -26,6 +26,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { SuperTabsModule } from 'ionic2-super-tabs';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './filter.pipe';
+import { Keyboard } from '@ionic-native/keyboard';
 
 
 @NgModule({
@@ -73,6 +74,7 @@ import { FilterPipe } from './filter.pipe';
     SocialSharing,
     HttpClient,
     HttpClientModule,
+    Keyboard
   ]
 })
 export class AppModule {}

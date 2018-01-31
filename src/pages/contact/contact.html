@@ -8,10 +8,27 @@
 
 <ion-content class="card-background-page ">
   <div *ngIf="oeuvres">
-    <ion-card (click)="goToDetail(oeuvre); vibrate();" *ngFor="let oeuvre of oeuvres | search : terms">
+    <ion-card [@fadeInOut] (click)="goToDetail(oeuvre); vibrate();" *ngFor="let oeuvre of oeuvres | search : terms">
       <img src={{oeuvre.image}}/>
       <div class="card-title">{{oeuvre.title}}</div>
       <div class="card-subtitle">{{oeuvre.author}}</div>
     </ion-card>
+  </div>
+  <div *ngIf="noneSelected">
+    <div class="emptyState">
+      <ion-card>
+        <ion-card-header>
+          <ion-row>
+            <ion-icon class="larger" name="sad"></ion-icon>
+          </ion-row>
+          <ion-row>
+            Hmmm ...
+          </ion-row>
+        </ion-card-header>
+        <ion-card-content>
+          I guess we don't have that one here yet !
+        </ion-card-content>
+      </ion-card>
+    </div>
   </div>
 </ion-content>

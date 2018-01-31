@@ -7133,7 +7133,7 @@ ion-card-content {
 .card-ios p {
   margin: 0 0 2px;
   font-size: 1.4rem;
-  color: #666;
+  color: black;
 }
 
 .card-ios + ion-card {
@@ -7483,14 +7483,14 @@ ion-card-content {
   margin: 0 0 2px;
   font-size: 2.4rem;
   font-weight: normal;
-  color: #222;
+  color: black;
 }
 
 .card-md h2 {
   margin: 2px 0;
   font-size: 1.6rem;
   font-weight: normal;
-  color: #222;
+  color: black;
 }
 
 .card-md h3,
@@ -7500,7 +7500,7 @@ ion-card-content {
   margin: 2px 0;
   font-size: 1.4rem;
   font-weight: normal;
-  color: #222;
+  color: black;
 }
 
 .card-md p {
@@ -7508,7 +7508,7 @@ ion-card-content {
   font-size: 1.4rem;
   font-weight: normal;
   line-height: 1.5;
-  color: #222;
+  color: black;
 }
 
 .card-md + ion-card {
@@ -7888,14 +7888,14 @@ ion-card-content {
   margin: 0 0 2px;
   font-size: 2.4rem;
   font-weight: normal;
-  color: #222;
+  color: black;
 }
 
 .card-wp h2 {
   margin: 2px 0;
   font-size: 1.6rem;
   font-weight: normal;
-  color: #222;
+  color: black;
 }
 
 .card-wp h3,
@@ -7905,7 +7905,7 @@ ion-card-content {
   margin: 2px 0;
   font-size: 1.4rem;
   font-weight: normal;
-  color: #222;
+  color: black;
 }
 
 .card-wp p {
@@ -7913,7 +7913,7 @@ ion-card-content {
   font-size: 1.4rem;
   font-weight: normal;
   line-height: 1.5;
-  color: #222;
+  color: black;
 }
 
 .card-wp + ion-card {
@@ -26608,6 +26608,26 @@ img.small {
   color: #fff;
 }
 
+.emptyState {
+  margin-top: 30%;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-family: "Lato",sans-serif;
+}
+
+ion-card-content {
+  color: black;
+}
+
+ion-card-header {
+  color: black;
+}
+
+.larger {
+  font-size: 100px;
+}
+
 audio {
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
@@ -26841,7 +26861,7 @@ header h2 {
 
 header {
   position: relative;
-  padding-top: 10px;
+  padding-top: 5px;
   display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
