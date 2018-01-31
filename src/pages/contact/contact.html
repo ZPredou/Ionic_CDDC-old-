@@ -1,14 +1,14 @@
 <ion-header>
   <ion-navbar>
     <ion-title style="color:white;">
-      <div style="color:black;">Les œuvres</div>
+      <ion-searchbar [(ngModel)]="terms" placeholder="Nom de l'oeuvre ..."></ion-searchbar>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="card-background-page ">
   <div *ngIf="oeuvres">
-    <ion-card (click)="goToDetail(oeuvre); vibrate();" *ngFor="let oeuvre of oeuvres">
+    <ion-card (click)="goToDetail(oeuvre); vibrate();" *ngFor="let oeuvre of oeuvres | search : terms">
       <img src={{oeuvre.image}}/>
       <div class="card-title">{{oeuvre.title}}</div>
       <div class="card-subtitle">{{oeuvre.author}}</div>

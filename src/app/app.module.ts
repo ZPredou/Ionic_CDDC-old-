@@ -24,7 +24,8 @@ import { HeaderColor } from '@ionic-native/header-color';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { SuperTabsModule } from 'ionic2-super-tabs';
-
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     TabsPage,
     DetailPage,
     SchoolPage,
-    PlansPage
+    PlansPage,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,9 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     HttpModule,
     SuperTabsModule.forRoot(),
     SuperTabsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -68,7 +72,7 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     InAppBrowser,
     SocialSharing,
     HttpClient,
-    HttpClientModule
+    HttpClientModule,
   ]
 })
 export class AppModule {}

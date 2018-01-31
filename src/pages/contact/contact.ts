@@ -13,6 +13,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ContactPage implements OnInit {
   oeuvres:any[] = [];
+  searchText='';
 
   constructor(public nav: NavController ,private vibration: Vibration ,private http: HttpClient) {
     this.nav = nav;

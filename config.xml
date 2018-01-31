@@ -108,4 +108,5 @@
     <allow-navigation href="http://10.0.1.2:8101" />
     <engine name="android" spec="^6.3.0" />
     <allow-navigation href="http://10.0.1.94:8100" />
+    <allow-navigation href="http://10.0.1.5:8100" />
 </widget>
