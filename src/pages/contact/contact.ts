@@ -21,6 +21,7 @@ import { HttpClient } from '@angular/common/http';
 export class ContactPage implements OnInit {
   oeuvres:any[] = [];
   searchText='';
+  actualOeuvres:any[] = [];
 
   constructor(public nav: NavController ,private vibration: Vibration ,private http: HttpClient) {
     this.nav = nav;
@@ -39,6 +40,6 @@ export class ContactPage implements OnInit {
     });
   }
   noneSelected(){
-  return this.oeuvres.filter(oeuvre => oeuvre.isSelected).length===0;
+    return this.oeuvres.filter(oeuvre => oeuvre.isSelected).length===0;
   }
 }

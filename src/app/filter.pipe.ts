@@ -13,8 +13,10 @@ export class FilterPipe implements PipeTransform {
     if(!items) return [];
     if(!terms) return items;
     terms = terms.toLowerCase();
-    return items.filter( it => {
-      return it.title.toLowerCase().includes(terms); // only filter title
-    });
+    return  items.filter(item =>
+                        Object.keys(item).some(k => item[k] != null &&
+                        item[k].toString().toLowerCase()
+                        .includes(terms.toLowerCase()))
+                        );
   }
 }

@@ -29,6 +29,7 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#d34836" />
     <preference name="StatusBarStyle" value="lightcontent" />
+    <preference name="orientation" value="portrait" />
     <platform name="android">
         <preference name="StatusBarStyle" value="lightcontent" />
         <preference name="loadUrlTimeoutValue" value="700000" />
@@ -105,8 +106,8 @@
     <plugin name="cordova-plugin-x-socialsharing" spec="^5.2.1" />
     <allow-navigation href="http://10.0.1.2:8100" />
     <allow-navigation href="http://10.0.1.2:8101" />
-    <engine name="android" spec="^6.3.0" />
     <allow-navigation href="http://10.0.1.94:8100" />
     <allow-navigation href="http://10.0.1.5:8100" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
+    <engine name="android" spec="^6.3.0" />
 </widget>

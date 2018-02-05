@@ -99,6 +99,7 @@
     <preference name="statusBarBackgroundColor" value="red" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#d34836" />
+    <preference name="orientation" value="portrait" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="loadUrlTimeoutValue" value="700000" />
 </widget>

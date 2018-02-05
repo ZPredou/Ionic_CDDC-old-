@@ -1,22 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-title style="color:white;">
-      <ion-searchbar [(ngModel)]="terms" placeholder="Nom de l'oeuvre ..."></ion-searchbar>
+      <ion-searchbar [animated]="true" [(ngModel)]="terms" placeholder="Nom de l'oeuvre ..."></ion-searchbar>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="card-background-page ">
-  <div *ngIf="oeuvres">
+  <div *ngIf="oeuvres !==''; else elseBlock">
     <ion-card [@fadeInOut] (click)="goToDetail(oeuvre); vibrate();" *ngFor="let oeuvre of oeuvres | search : terms">
       <img src={{oeuvre.image}}/>
       <div class="card-title">{{oeuvre.title}}</div>
       <div class="card-subtitle">{{oeuvre.author}}</div>
     </ion-card>
   </div>
-  <div *ngIf="noneSelected">
-    <div class="emptyState">
-      <ion-card *ngIf="!noneSelected">
+    <div *ngIf="oeuvres == ''" class="emptyState">
+      <ion-card>
         <ion-card-header>
           <ion-row>
             <ion-icon class="larger" name="sad"></ion-icon>
@@ -30,5 +29,4 @@
         </ion-card-content>
       </ion-card>
     </div>
-  </div>
 </ion-content>
