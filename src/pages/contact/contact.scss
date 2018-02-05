@@ -10,6 +10,7 @@
   img {
     -webkit-filter: brightness(50%);
     -moz-filter: brightness(50%);
+
   }
   .card-title {
     border-top:3px solid white ;
@@ -45,4 +46,13 @@ ion-card-header{
 }
 .larger {
     font-size: 100px;
+}
+body > ion-app > ng-component > ion-nav > ng-component > super-tabs > super-tabs-container > div > super-tab:nth-child(3) > page-contact > ion-header > ion-navbar > div.toolbar-content.toolbar-content-ios > ion-title > div > ion-searchbar > div > div{
+  margin-left:0px;
+}
+body > ion-app > ng-component > ion-nav > ng-component > super-tabs > super-tabs-container > div > super-tab:nth-child(3) > page-contact > ion-header > ion-navbar > div.toolbar-content.toolbar-content-ios > ion-title > div > ion-searchbar > div > input{
+  padding-left:auto;
+}
+body > ion-app > ng-component > ion-nav > ng-component > super-tabs > super-tabs-container > div > super-tab:nth-child(3) > page-contact > ion-header > ion-navbar > div.toolbar-content.toolbar-content-ios > ion-title > div > ion-searchbar > div > input{
+  padding-left: auto;
 }

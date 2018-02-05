@@ -42,4 +42,10 @@ export class ContactPage implements OnInit {
   noneSelected(){
     return this.oeuvres.filter(oeuvre => oeuvre.isSelected).length===0;
   }
+  onKey(e) {
+        if (e.keyCode == 13) {
+            let activeElement = <HTMLElement>document.activeElement;
+            activeElement && activeElement.blur && activeElement.blur();
+          }
+  }
 }

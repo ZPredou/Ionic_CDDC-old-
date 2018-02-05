@@ -27,4 +27,5 @@ export class AboutPage {
   public goToPlans(){
     this.nav.push(PlansPage);
   }
+
 }

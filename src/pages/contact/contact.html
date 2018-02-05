@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title style="color:white;">
-      <ion-searchbar [animated]="true" [(ngModel)]="terms" placeholder="Nom de l'oeuvre ..."></ion-searchbar>
+      <ion-searchbar (window:keydown)="onKey($event)" [animated]="true" [(ngModel)]="terms" placeholder="Oeuvre/Artiste"></ion-searchbar>
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -21,11 +21,11 @@
             <ion-icon class="larger" name="sad"></ion-icon>
           </ion-row>
           <ion-row>
-            Hmmm ...
+            Oops !
           </ion-row>
         </ion-card-header>
         <ion-card-content>
-          I guess we don't have that one here yet !
+          Aucune oeuvre ne correspond à cette recherche.
         </ion-card-content>
       </ion-card>
     </div>

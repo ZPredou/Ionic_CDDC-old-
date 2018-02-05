@@ -1,6 +1,6 @@
-# Ionic_Exposition
+# Ionic_CDDC
 
-This Ionic application will be used as a base template to create interactive guides to the upcoming Art Exposition that 'll happen in the future
+This Ionic application will be used as a base template to create interactive guides to the upcoming Art Exposition that 'll happen in the future.
 
 ## Getting Started
 
@@ -12,7 +12,7 @@ Instal node.js to have access to "npm" commands
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running ( You may need to add “sudo” in front of these commands to install the utilities globally )
+A step by step series of examples that tell you have to get a development env running ( You may need to add “sudo” in front of these commands to install the utilities globally ).
 
 Install ionic
 
@@ -20,10 +20,16 @@ Install ionic
 $ npm install -g ionic cordova
 ```
 
-Then launch the server in this project's folder
+Clone the folder
 
 ```
-$ cd Ionic_Exposition
+$ git clone https://github.com/ZPredou/Ionic_CDDC.git
+```
+
+Then launch the server in this project's folder.
+
+```
+$ cd Ionic_CDDC
 $ ionic serve
 ```
 
@@ -39,9 +45,10 @@ $ ionic serve
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used ( even though i'm the only one at the moment :D )
-* Arroi to let me manage this project
+* Hat tip to anyone who's code was used ( even though i'm the only one at the moment :D ).
+* Arroi to let me manage this project as the part of my studies , since the technology used is in correlation with my web dev studies !
+* The whole staff at Arroi to give me feedbacks about this app.

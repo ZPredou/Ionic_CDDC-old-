@@ -330,6 +330,7 @@ let ContactPage = class ContactPage {
         this.http = http;
         this.oeuvres = [];
         this.searchText = '';
+        this.actualOeuvres = [];
         this.nav = nav;
     }
     ngOnInit() {
@@ -348,10 +349,23 @@ let ContactPage = class ContactPage {
     noneSelected() {
         return this.oeuvres.filter(oeuvre => oeuvre.isSelected).length === 0;
     }
+<<<<<<< HEAD
+    onKey(e) {
+        if (e.keyCode == 13) {
+            let activeElement = document.activeElement;
+            activeElement && activeElement.blur && activeElement.blur();
+        }
+    }
+};
+ContactPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        selector: 'page-contact',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/contact/contact.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title style="color:white;">\n      <ion-searchbar (window:keydown)="onKey($event)" [animated]="true" [(ngModel)]="terms" placeholder="Oeuvre/Artiste"></ion-searchbar>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="card-background-page ">\n  <div *ngIf="oeuvres !==\'\'; else elseBlock">\n    <ion-card [@fadeInOut] (click)="goToDetail(oeuvre); vibrate();" *ngFor="let oeuvre of oeuvres | search : terms">\n      <img src={{oeuvre.image}}/>\n      <div class="card-title">{{oeuvre.title}}</div>\n      <div class="card-subtitle">{{oeuvre.author}}</div>\n    </ion-card>\n  </div>\n    <div *ngIf="(oeuvres | search: terms).length === 0" class="emptyState">\n      <ion-card>\n        <ion-card-header>\n          <ion-row>\n            <ion-icon class="larger" name="sad"></ion-icon>\n          </ion-row>\n          <ion-row>\n            Oops !\n          </ion-row>\n        </ion-card-header>\n        <ion-card-content>\n          Aucune oeuvre ne correspond à cette recherche.\n        </ion-card-content>\n      </ion-card>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/contact/contact.html"*/,
+=======
 };
 ContactPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
         selector: 'page-contact',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/contact/contact.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title style="color:white;">\n      <ion-searchbar [(ngModel)]="terms" placeholder="Nom de l\'oeuvre ..."></ion-searchbar>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="card-background-page ">\n  <div *ngIf="oeuvres">\n    <ion-card [@fadeInOut] (click)="goToDetail(oeuvre); vibrate();" *ngFor="let oeuvre of oeuvres | search : terms">\n      <img src={{oeuvre.image}}/>\n      <div class="card-title">{{oeuvre.title}}</div>\n      <div class="card-subtitle">{{oeuvre.author}}</div>\n    </ion-card>\n  </div>\n  <div *ngIf="noneSelected">\n    <div class="emptyState">\n      <ion-card>\n        <ion-card-header>\n          <ion-row>\n            <ion-icon class="larger" name="sad"></ion-icon>\n          </ion-row>\n          <ion-row>\n            Hmmm ...\n          </ion-row>\n        </ion-card-header>\n        <ion-card-content>\n          I guess we don\'t have that one here yet !\n        </ion-card-content>\n      </ion-card>\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/contact/contact.html"*/,
+>>>>>>> aa5caa12a567c58bab54afda410a4d9d10914718
         providers: [[__WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */]]],
         animations: [
             Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_23" /* trigger */])('fadeInOut', [
@@ -626,9 +640,9 @@ let FilterPipe = class FilterPipe {
         if (!terms)
             return items;
         terms = terms.toLowerCase();
-        return items.filter(it => {
-            return it.title.toLowerCase().includes(terms); // only filter title
-        });
+        return items.filter(item => Object.keys(item).some(k => item[k] != null &&
+            item[k].toString().toLowerCase()
+                .includes(terms.toLowerCase())));
     }
 };
 FilterPipe = __decorate([
