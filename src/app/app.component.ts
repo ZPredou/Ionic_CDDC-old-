@@ -4,9 +4,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { OneSignal } from '@ionic-native/onesignal';
 import { TabsPage } from '../pages/tabs/tabs';
+import firebase from 'firebase';
+import { DataProvider } from '../providers/data/data';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers: [DataProvider]
 })
 export class MyApp {
   rootPage:any = TabsPage;
@@ -26,6 +29,13 @@ export class MyApp {
         // handle opened here how you wish.
       });
       this._OneSignal.endInit();
+    });
+    firebase.initializeApp({
+      apiKey: "AIzaSyCg-j3__45KtdCGiYg04r9GcUmg5KpVrNA",
+      authDomain: "dothingsonionic.firebaseapp.com",
+      databaseURL: "https://dothingsonionic.firebaseio.com",
+      storageBucket: "dothingsonionic.appspot.com",
+      messagingSenderId: "337865225097"
     });
   }
 }

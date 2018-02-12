@@ -6,6 +6,8 @@ import { HttpModule }      from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DataProvider } from '../providers/data/data';
+import firebase from 'firebase';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -27,6 +29,7 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './filter.pipe';
 import { Keyboard } from '@ionic-native/keyboard';
+
 
 
 @NgModule({
@@ -74,7 +77,8 @@ import { Keyboard } from '@ionic-native/keyboard';
     SocialSharing,
     HttpClient,
     HttpClientModule,
-    Keyboard
+    Keyboard,
+    DataProvider
   ]
 })
 export class AppModule {}

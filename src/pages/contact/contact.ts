@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Vibration } from '@ionic-native/vibration';
 import { DetailPage } from '../detail/detail';
 import { HttpClient } from '@angular/common/http';
+import { Data } from '../../providers/data/data';
 
 
 @Component({
