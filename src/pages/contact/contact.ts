@@ -3,8 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Vibration } from '@ionic-native/vibration';
 import { DetailPage } from '../detail/detail';
 import { HttpClient } from '@angular/common/http';
-import { Data } from '../../providers/data/data';
-
+import { DataProvider } from '../../providers/data/data';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'page-contact',
@@ -20,17 +20,21 @@ import { Data } from '../../providers/data/data';
 })
 @Injectable()
 export class ContactPage implements OnInit {
-  oeuvres:any[] = [];
+  public oeuvres:any[] = [];
   searchText='';
   actualOeuvres:any[] = [];
 
-  constructor(public nav: NavController ,private vibration: Vibration ,private http: HttpClient) {
+  constructor(public nav: NavController ,private vibration: Vibration ,private http: HttpClient ,private _data: DataProvider) {
     this.nav = nav;
+    let that = this;
+    this._data.oeuvres.subscribe((data) => {
+      that.oeuvres.push(data);
+    }, (err) => {
+      console.error(err);
+    });
   }
   ngOnInit(){
-      this.http.get('./assets/oeuvres.json').subscribe(data => {
-        this.oeuvres = data['oeuvres'];
-    });
+
   }
   private vibrate(){
     this.vibration.vibrate([30]);

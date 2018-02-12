@@ -4,9 +4,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { OneSignal } from '@ionic-native/onesignal';
 import { TabsPage } from '../pages/tabs/tabs';
-import firebase from 'firebase';
+import * as firebase from 'firebase';
 import { DataProvider } from '../providers/data/data';
 
+const config = {
+  apiKey: "AIzaSyCg-j3__45KtdCGiYg04r9GcUmg5KpVrNA",
+  authDomain: "dothingsonionic.firebaseapp.com",
+  databaseURL: "https://dothingsonionic.firebaseio.com",
+  projectId: "dothingsonionic",
+  storageBucket: "dothingsonionic.appspot.com",
+  messagingSenderId: "337865225097"
+};
 @Component({
   templateUrl: 'app.html',
   providers: [DataProvider]
@@ -30,12 +38,6 @@ export class MyApp {
       });
       this._OneSignal.endInit();
     });
-    firebase.initializeApp({
-      apiKey: "AIzaSyCg-j3__45KtdCGiYg04r9GcUmg5KpVrNA",
-      authDomain: "dothingsonionic.firebaseapp.com",
-      databaseURL: "https://dothingsonionic.firebaseio.com",
-      storageBucket: "dothingsonionic.appspot.com",
-      messagingSenderId: "337865225097"
-    });
+    firebase.initializeApp(config);
   }
 }

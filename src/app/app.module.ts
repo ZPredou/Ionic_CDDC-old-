@@ -7,7 +7,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DataProvider } from '../providers/data/data';
-import firebase from 'firebase';
+import * as firebase from 'firebase';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -53,7 +53,6 @@ import { Keyboard } from '@ionic-native/keyboard';
     SuperTabsModule,
     BrowserAnimationsModule,
     FormsModule
-
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -78,7 +77,7 @@ import { Keyboard } from '@ionic-native/keyboard';
     HttpClient,
     HttpClientModule,
     Keyboard,
-    DataProvider
+    DataProvider,
   ]
 })
 export class AppModule {}

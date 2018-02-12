@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {ReplaySubject} from 'rxjs/ReplaySubject';
 
 @Injectable()
 export class DataProvider {
@@ -10,6 +11,7 @@ export class DataProvider {
     this._db = firebase.database().ref('/');
     this._oeuvresRef = firebase.database().ref('oeuvres');
     this._oeuvresRef.on('child_added', this.handleData, this);
+    this._oeuvres$ = new ReplaySubject();
   }
   get oeuvres()
   {
@@ -24,4 +26,9 @@ export class DataProvider {
       console.log('catching', error);
     }
   }
+  save(todo)
+  {
+   return this._oeuvresRef.push(oeuvre).key;
+  }
+
 }
