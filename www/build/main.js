@@ -135,7 +135,7 @@ PlansPage = __decorate([
         providers: [[__WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */]]]
     }),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */], __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */], __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */]])
 ], PlansPage);
 
 //# sourceMappingURL=plans.js.map
@@ -172,7 +172,7 @@ SchoolPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
         selector: 'page-school',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/school/school.html"*/'<ion-header hidden>\n\n  <ion-navbar>\n    <ion-title style="color:black">Le collège ...</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="no-scroll">\n  <header>\n    <h1 class="playfair">Collège Abel Didelet</h1>\n    <h2>Enseignement secondaire à Estrées-Saint-Denis</h2>\n  </header>\n  <h3 class="schoolDesc">Vous présente avec envie son exposition virtuelle dans le cadre de son contrat départemental de developpement culturel avec la Fabrique de l\'Esprit.</h3>\n  <video autoplay loop class="bg-vid" muted webkit-playsinline>\n      <source src="assets/videos/SVI_VDef.webm" type=\'video/webm\'>\n  </video>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/school/school.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
 ], SchoolPage);
 
 //# sourceMappingURL=school.js.map
@@ -290,7 +290,7 @@ TabsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/tabs/tabs.html"*/'<super-tabs tabsPlacement=\'bottom\' (ionChange)="vibrate()" >\n  <super-tab (click)="vibrate()" [root]="tab1Root" title="Accueil" icon="home"></super-tab>\n  <super-tab (click)="vibrate()" [root]="tab3Root" title="Le collège" icon="school"></super-tab>\n  <super-tab (click)="vibrate()" [root]="tab2Root" title="L\'Exposition" icon="navigate"></super-tab>\n</super-tabs>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/tabs/tabs.html"*/,
         providers: [[__WEBPACK_IMPORTED_MODULE_1__ionic_native_vibration__["a" /* Vibration */]]]
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ionic_native_vibration__["a" /* Vibration */], __WEBPACK_IMPORTED_MODULE_5_ionic2_super_tabs__["b" /* SuperTabsController */], __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_keyboard__["a" /* Keyboard */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ionic_native_vibration__["a" /* Vibration */], __WEBPACK_IMPORTED_MODULE_5_ionic2_super_tabs__["b" /* SuperTabsController */], __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["n" /* Platform */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_keyboard__["a" /* Keyboard */]])
 ], TabsPage);
 
 //# sourceMappingURL=tabs.js.map
@@ -343,7 +343,7 @@ AboutPage = __decorate([
         providers: [__WEBPACK_IMPORTED_MODULE_2__ionic_native_barcode_scanner__["a" /* BarcodeScanner */]]
     }),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_barcode_scanner__["a" /* BarcodeScanner */], __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClient */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_barcode_scanner__["a" /* BarcodeScanner */], __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClient */]])
 ], AboutPage);
 
 //# sourceMappingURL=about.js.map
@@ -377,21 +377,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 let ContactPage = class ContactPage {
-    constructor(nav, vibration, http, _data) {
+    constructor(nav, vibration, http, _data, loading) {
         this.nav = nav;
         this.vibration = vibration;
         this.http = http;
         this._data = _data;
+        this.loading = loading;
         this.oeuvres = [];
         this.searchText = '';
+        this.isLoaded = false;
         this.actualOeuvres = [];
         this.nav = nav;
-        let that = this;
-        this._data.oeuvres.subscribe((data) => {
-            that.oeuvres.push(data);
-        }, (err) => {
-            console.error(err);
+        let loader = this.loading.create({
+            content: 'Récupération des oeuvres',
         });
+        loader.present();
+        let that = this;
+        loader.present().then(() => {
+            this._data.oeuvres.subscribe((data) => {
+                that.oeuvres.push(data);
+            }, (err) => {
+                console.error(err);
+            });
+        });
+        loader.dismiss();
     }
     ngOnInit() {
     }
@@ -415,7 +424,7 @@ let ContactPage = class ContactPage {
 };
 ContactPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-contact',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/contact/contact.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title style="color:white;">\n      <ion-searchbar (window:keydown)="onKey($event)" [animated]="true" [(ngModel)]="terms" placeholder="Oeuvre/Artiste"></ion-searchbar>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="card-background-page ">\n  <div *ngIf="oeuvres !==\'\'; else elseBlock">\n    <ion-card [@fadeInOut] (click)="goToDetail(oeuvre); vibrate();" *ngFor="let oeuvre of oeuvres | search : terms">\n      <img src={{oeuvre.image}}/>\n      <div class="card-title">{{oeuvre.title}}</div>\n      <div class="card-subtitle">{{oeuvre.author}}</div>\n    </ion-card>\n  </div>\n    <div *ngIf="(oeuvres | search: terms).length === 0" class="emptyState">\n      <ion-card>\n        <ion-card-header>\n          <ion-row>\n            <ion-icon class="larger" name="sad"></ion-icon>\n          </ion-row>\n          <ion-row>\n            Oops !\n          </ion-row>\n        </ion-card-header>\n        <ion-card-content>\n          Aucune oeuvre ne correspond à cette recherche.\n        </ion-card-content>\n      </ion-card>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/contact/contact.html"*/,
+        selector: 'page-contact',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/contact/contact.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title style="color:white;">\n      <ion-searchbar (window:keydown)="onKey($event)" [animated]="true" [(ngModel)]="terms" placeholder="Oeuvre/Artiste"></ion-searchbar>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="card-background-page">\n  <div *ngIf="oeuvres !==\'\'; else elseBlock">\n    <ion-card [@fadeInOut] (click)="goToDetail(oeuvre); vibrate();" *ngFor="let oeuvre of oeuvres | search : terms">\n      <img src={{oeuvre.image}}/>\n      <div class="card-title">{{oeuvre.title}}</div>\n      <div class="card-subtitle">{{oeuvre.author}}</div>\n    </ion-card>\n  </div>\n    <div *ngIf="(oeuvres | search: terms).length === 0 && loader == true" class="emptyState">\n      <ion-card>\n        <ion-card-header>\n          <ion-row>\n            <ion-icon class="larger" name="sad"></ion-icon>\n          </ion-row>\n          <ion-row>\n            Oops !\n          </ion-row>\n        </ion-card-header>\n        <ion-card-content>\n          Aucune oeuvre ne correspond à cette recherche.\n        </ion-card-content>\n      </ion-card>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/contact/contact.html"*/,
         providers: [[__WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */]]],
         animations: [
             Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_23" /* trigger */])('fadeInOut', [
@@ -426,10 +435,10 @@ ContactPage = __decorate([
         ]
     }),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_data_data__["a" /* DataProvider */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_data_data__["a" /* DataProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* LoadingController */]) === "function" && _e || Object])
 ], ContactPage);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=contact.js.map
 
 /***/ }),
@@ -462,9 +471,9 @@ let HomePage = class HomePage {
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
         selector: 'page-home',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="homeBack">\n  <!-- Real floating action button, fixed. It will not scroll with the content -->\n  <ion-fab top right edge #fab1>\n    <button ion-fab mini color="dark"><ion-icon name="heart"></ion-icon></button>\n    <ion-fab-list #fabList>\n      <div *ngIf="fabList.classList.contains(\'fab-list-active\')" class="backdrop" (click)="fab1.close();"></div>\n      <a button ion-fab href="https://fr-fr.facebook.com/fondationfrances/">\n        <ion-icon name="logo-facebook"></ion-icon>\n        <div class="label">Facebook</div>\n      </a>\n      <a button ion-fab href="https://twitter.com/FFrancesArt">\n        <ion-icon name="logo-twitter"></ion-icon>\n        <div class="label">Twitter</div>\n      </a>\n      <a button ion-fab href="tel:0688360209" clear>\n        <ion-icon name="call"></ion-icon>\n        <div class="label">Besoin d\'info ?</div>\n      </a>\n    </ion-fab-list>\n  </ion-fab>\n  <img class="logo" src="./assets/imgs/FDE.jpg">\n  <div class="wrapping-title">\n    <h1> A propos ..</h1>\n    <h2> Nos projets d\'avenirs et nos offres culturels actuelles</h2>\n    <p class="undertext">Depuis sa création, La Fabrique de l\'Esprit® développe des contenus pédagogiques, élabore des programmes éducatifs culturels, à l’appui d’œuvres contemporaines, et des œuvres de la collection Francès. L’ensemble de ces programmes répond à des enjeux éducatifs, artistiques et culturels.</p>\n    <p class="undertext">En 2017, elle devient membre du mouvement des clubs français pour l’UNESCO. L’accréditation est émise par le Commission Nationale Française pour l’UNESCO. Un prolongement évident tant les missions accomplies répondent aux mêmes enjeux sur le plan de l’éducation, des échanges internationaux et du partage de connaissances pour conserver un patrimoine et défendre des valeurs de paix et de collaborations.</p>\n  </div>\n  <button ion-button full color="danger" onclick="window.open(\'http://lafabriquedelespritlesamis.fr/\', \'_blank\', \'location=yes\', \'zoom=no\');return false;">Voir le site de la FDE</button>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/home/home.html"*/,
-        providers: [[__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */]]]
+        providers: [[__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ToastController */]]]
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ToastController */]])
 ], HomePage);
 
 //# sourceMappingURL=home.js.map
@@ -677,7 +686,7 @@ MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/app/app.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_7__providers_data_data__["a" /* DataProvider */]]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_onesignal__["a" /* OneSignal */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_onesignal__["a" /* OneSignal */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_onesignal__["a" /* OneSignal */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_onesignal__["a" /* OneSignal */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object])
 ], MyApp);
 
 var _a, _b, _c, _d;
@@ -807,7 +816,7 @@ DetailPage = __decorate([
         selector: 'page-detail',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/detail/detail.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="cards-bg">\n  <ion-card>\n    <ion-card-content>\n      <ion-card-title>\n        Par {{author}}\n      </ion-card-title>\n      <p>{{description}}</p>\n    </ion-card-content>\n    <img src={{image}}/>\n    <ion-row no-padding>\n      <ion-col>\n        <button ion-button clear small (click)="playAudio(); vibrate();" color="danger" icon-start>\n          <ion-icon name=\'headset\'></ion-icon>\n          Ecouter le guide\n        </button>\n      </ion-col>\n      <ion-col>\n        <a button ion-button clear small href="{{url}}" onclick="window.open(this.href, \'_blank\', \'location=yes\', \'zoom=no\');return false;" (click)="vibrate();" color="danger" icon-start>\n          <ion-icon name=\'book\'></ion-icon>\n          En savoir plus\n        </a>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <div *ngIf="soundMenu==true">\n        <audio controls>\n          <source src="{{sound}}" type="audio/mpeg">\n          Your browser does not support the audio element.\n        </audio>\n      </div>\n    </ion-row>\n    <ion-row no-padding>\n      <ion-col>\n        <button ion-button clear small (click)="fbShare(); vibrate();" color="danger" icon-start>\n          <ion-icon name=\'logo-facebook\'></ion-icon>\n          facebook\n        </button>\n      </ion-col>\n      <ion-col>\n        <button ion-button clear small (click)="twShare(); vibrate();" color="danger" icon-start>\n          <ion-icon name=\'logo-twitter\'></ion-icon>\n          twitter\n        </button>\n      </ion-col>\n      <ion-col>\n        <button ion-button clear small (click)="Share(); vibrate();" color="danger" icon-start>\n          <ion-icon name=\'share-alt\'></ion-icon>\n          plus\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/detail/detail.html"*/,
         providers: [[__WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */]]]
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__["a" /* InAppBrowser */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_social_sharing__["a" /* SocialSharing */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__["a" /* InAppBrowser */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_social_sharing__["a" /* SocialSharing */]])
 ], DetailPage);
 
 //# sourceMappingURL=detail.js.map

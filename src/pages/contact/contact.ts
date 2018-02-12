@@ -1,5 +1,5 @@
 import { Component ,OnInit , Injectable, trigger, state, style, animate, transition} from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Vibration } from '@ionic-native/vibration';
 import { DetailPage } from '../detail/detail';
 import { HttpClient } from '@angular/common/http';
@@ -22,19 +22,27 @@ import * as firebase from 'firebase';
 export class ContactPage implements OnInit {
   public oeuvres:any[] = [];
   searchText='';
+  public isLoaded=false;
   actualOeuvres:any[] = [];
 
-  constructor(public nav: NavController ,private vibration: Vibration ,private http: HttpClient ,private _data: DataProvider) {
+  constructor(public nav: NavController ,private vibration: Vibration ,private http: HttpClient ,private _data: DataProvider ,public loading: LoadingController) {
     this.nav = nav;
-    let that = this;
-    this._data.oeuvres.subscribe((data) => {
-      that.oeuvres.push(data);
-    }, (err) => {
-      console.error(err);
+      let loader = this.loading.create({
+        content: 'Récupération des oeuvres',
+      });
+      loader.present();
+      let that = this;
+      loader.present().then(() => {
+        this._data.oeuvres.subscribe((data) => {
+        that.oeuvres.push(data);
+      }, (err) => {
+        console.error(err);
+
+      });
     });
+    loader.dismiss()
   }
   ngOnInit(){
-
   }
   private vibrate(){
     this.vibration.vibrate([30]);
