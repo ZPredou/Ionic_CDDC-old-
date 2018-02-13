@@ -26628,7 +26628,6 @@ ion-card-header {
   font-size: 100px;
 }
 
-<<<<<<< HEAD
 body > ion-app > ng-component > ion-nav > ng-component > super-tabs > super-tabs-container > div > super-tab:nth-child(3) > page-contact > ion-header > ion-navbar > div.toolbar-content.toolbar-content-ios > ion-title > div > ion-searchbar > div > div {
   margin-left: 0px;
 }
@@ -26641,8 +26640,6 @@ body > ion-app > ng-component > ion-nav > ng-component > super-tabs > super-tabs
   padding-left: auto;
 }
 
-=======
->>>>>>> aa5caa12a567c58bab54afda410a4d9d10914718
 audio {
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;

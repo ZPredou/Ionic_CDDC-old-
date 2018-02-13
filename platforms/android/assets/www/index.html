@@ -47,6 +47,18 @@
 
   <!-- The main bundle js is generated during the build process -->
   <script src="build/main.js"></script>
-
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCg-j3__45KtdCGiYg04r9GcUmg5KpVrNA",
+    authDomain: "dothingsonionic.firebaseapp.com",
+    databaseURL: "https://dothingsonionic.firebaseio.com",
+    projectId: "dothingsonionic",
+    storageBucket: "dothingsonionic.appspot.com",
+    messagingSenderId: "337865225097"
+  };
+  firebase.initializeApp(config);
+</script>
 </body>
 </html>

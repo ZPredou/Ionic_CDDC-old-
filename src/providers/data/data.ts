@@ -26,9 +26,5 @@ export class DataProvider {
       console.log('catching', error);
     }
   }
-  save(todo)
-  {
-   return this._oeuvresRef.push(oeuvre).key;
-  }
 
 }

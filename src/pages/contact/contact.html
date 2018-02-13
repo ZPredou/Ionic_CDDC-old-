@@ -14,7 +14,7 @@
       <div class="card-subtitle">{{oeuvre.author}}</div>
     </ion-card>
   </div>
-    <div *ngIf="(oeuvres | search: terms).length === 0 && loader == true" class="emptyState">
+    <div *ngIf="(oeuvres | search: terms).length === 0" class="emptyState">
       <ion-card>
         <ion-card-header>
           <ion-row>
