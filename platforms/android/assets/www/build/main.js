@@ -52,6 +52,43 @@ DataProvider = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SchoolPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+let SchoolPage = class SchoolPage {
+    constructor(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    ngOnInit() {
+    }
+};
+SchoolPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        selector: 'page-school',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/school/school.html"*/'<ion-header hidden>\n\n  <ion-navbar>\n    <ion-title style="color:black">Le collège ...</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="no-scroll">\n  <header>\n    <h1 class="playfair">Collège Abel Didelet</h1>\n    <h2>Enseignement secondaire à Estrées-Saint-Denis</h2>\n  </header>\n  <h3 class="schoolDesc">Vous présente avec envie son exposition virtuelle dans le cadre de son contrat départemental de developpement culturel avec la Fabrique de l\'Esprit.</h3>\n  <video autoplay loop class="bg-vid" muted webkit-playsinline>\n      <source src="assets/videos/SVI_VDef.webm" type=\'video/webm\'>\n  </video>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/school/school.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
+], SchoolPage);
+
+//# sourceMappingURL=school.js.map
+
+/***/ }),
+
+/***/ 147:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlansPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
@@ -139,43 +176,6 @@ PlansPage = __decorate([
 
 /***/ }),
 
-/***/ 147:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SchoolPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-let SchoolPage = class SchoolPage {
-    constructor(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    ngOnInit() {
-    }
-};
-SchoolPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-school',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/school/school.html"*/'<ion-header hidden>\n\n  <ion-navbar>\n    <ion-title style="color:black">Le collège ...</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="no-scroll">\n  <header>\n    <h1 class="playfair">Collège Abel Didelet</h1>\n    <h2>Enseignement secondaire à Estrées-Saint-Denis</h2>\n  </header>\n  <h3 class="schoolDesc">Vous présente avec envie son exposition virtuelle dans le cadre de son contrat départemental de developpement culturel avec la Fabrique de l\'Esprit.</h3>\n  <video autoplay loop class="bg-vid" muted webkit-playsinline>\n      <source src="assets/videos/SVI_VDef.webm" type=\'video/webm\'>\n  </video>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/school/school.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
-], SchoolPage);
-
-//# sourceMappingURL=school.js.map
-
-/***/ }),
-
 /***/ 162:
 /***/ (function(module, exports) {
 
@@ -198,15 +198,15 @@ webpackEmptyAsyncContext.id = 162;
 
 var map = {
 	"../pages/detail/detail.module": [
-		481,
+		480,
 		2
 	],
 	"../pages/plans/plans.module": [
-		480,
+		482,
 		1
 	],
 	"../pages/school/school.module": [
-		482,
+		481,
 		0
 	]
 };
@@ -234,7 +234,7 @@ module.exports = webpackAsyncContext;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_vibration__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__about_about__ = __webpack_require__(252);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__school_school__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__school_school__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(257);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic2_super_tabs__ = __webpack_require__(258);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_keyboard__ = __webpack_require__(265);
@@ -284,7 +284,7 @@ __decorate([
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_5_ionic2_super_tabs__["a" /* SuperTabs */])
 ], TabsPage.prototype, "superTabs", void 0);
 TabsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/tabs/tabs.html"*/'<super-tabs tabsPlacement=\'bottom\' (ionChange)="vibrate()" >\n  <super-tab (click)="vibrate()" [root]="tab1Root" title="Accueil" icon="home"></super-tab>\n  <super-tab (click)="vibrate()" [root]="tab3Root" title="Le collège" icon="school"></super-tab>\n  <super-tab (click)="vibrate()" [root]="tab2Root" title="L\'Exposition" icon="navigate"></super-tab>\n</super-tabs>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/tabs/tabs.html"*/,
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/tabs/tabs.html"*/'<super-tabs tabsPlacement=\'bottom\' (ionChange)="vibrate()" class="hide-on-keyboard-open">\n  <super-tab (click)="vibrate()" [root]="tab1Root" title="Accueil" icon="home"></super-tab>\n  <super-tab (click)="vibrate()" [root]="tab3Root" title="Le collège" icon="school"></super-tab>\n  <super-tab (click)="vibrate()" [root]="tab2Root" title="L\'Exposition" icon="navigate"></super-tab>\n</super-tabs>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/tabs/tabs.html"*/,
         providers: [[__WEBPACK_IMPORTED_MODULE_1__ionic_native_vibration__["a" /* Vibration */]]]
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ionic_native_vibration__["a" /* Vibration */], __WEBPACK_IMPORTED_MODULE_5_ionic2_super_tabs__["b" /* SuperTabsController */], __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["n" /* Platform */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_keyboard__["a" /* Keyboard */]])
@@ -303,7 +303,7 @@ TabsPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_barcode_scanner__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__contact_contact__ = __webpack_require__(254);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__plans_plans__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__plans_plans__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -421,7 +421,7 @@ let ContactPage = class ContactPage {
 };
 ContactPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-contact',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/contact/contact.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title style="color:white;">\n      <ion-searchbar (window:keydown)="onKey($event)" [animated]="true" [(ngModel)]="terms" placeholder="Oeuvre/Artiste"></ion-searchbar>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="card-background-page">\n  <div *ngIf="oeuvres !==\'\'; else elseBlock">\n    <ion-card [@fadeInOut] (click)="goToDetail(oeuvre); vibrate();" *ngFor="let oeuvre of oeuvres | search : terms">\n      <img src={{oeuvre.image}}/>\n      <div class="card-title">{{oeuvre.title}}</div>\n      <div class="card-subtitle">{{oeuvre.author}}</div>\n    </ion-card>\n  </div>\n    <div *ngIf="(oeuvres | search: terms).length === 0" class="emptyState">\n      <ion-card>\n        <ion-card-header>\n          <ion-row>\n            <ion-icon class="larger" name="sad"></ion-icon>\n          </ion-row>\n          <ion-row>\n            Oops !\n          </ion-row>\n        </ion-card-header>\n        <ion-card-content>\n          Aucune oeuvre ne correspond à cette recherche.\n        </ion-card-content>\n      </ion-card>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/contact/contact.html"*/,
+        selector: 'page-contact',template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/contact/contact.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title style="color:white;">\n      <ion-searchbar (window:keydown)="onKey($event)" [animated]="true" [(ngModel)]="terms" placeholder="Oeuvre/Artiste"></ion-searchbar>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="card-background-page test">\n  <ion-grid>\n  <div *ngIf="oeuvres !==\'\'; else elseBlock">\n    <ion-card [@fadeInOut] (click)="goToDetail(oeuvre); vibrate();" *ngFor="let oeuvre of oeuvres | search : terms">\n      <img src={{oeuvre.image}}/>\n      <div class="card-title">{{oeuvre.title}}</div>\n      <div class="card-subtitle">{{oeuvre.author}}</div>\n    </ion-card>\n  </div>\n    <div *ngIf="(oeuvres | search: terms).length === 0" class="emptyState">\n      <ion-card>\n        <ion-card-header>\n          <ion-row>\n            <ion-icon class="larger" name="sad"></ion-icon>\n          </ion-row>\n          <ion-row>\n            Oops !\n          </ion-row>\n        </ion-card-header>\n        <ion-card-content>\n          Aucune oeuvre ne correspond à cette recherche.\n        </ion-card-content>\n      </ion-card>\n    </div>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/pages/contact/contact.html"*/,
         providers: [[__WEBPACK_IMPORTED_MODULE_2__ionic_native_vibration__["a" /* Vibration */]]],
         animations: [
             Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_23" /* trigger */])('fadeInOut', [
@@ -508,8 +508,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(257);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_tabs_tabs__ = __webpack_require__(251);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_detail_detail__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_school_school__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_plans_plans__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_school_school__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_plans_plans__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_status_bar__ = __webpack_require__(248);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_splash_screen__ = __webpack_require__(249);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_onesignal__ = __webpack_require__(250);
@@ -573,9 +573,9 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                 links: [
-                    { loadChildren: '../pages/plans/plans.module#PlansPageModule', name: 'PlansPage', segment: 'plans', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/detail/detail.module#DetailPageModule', name: 'DetailPage', segment: 'detail', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/school/school.module#SchoolPageModule', name: 'SchoolPage', segment: 'school', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/school/school.module#SchoolPageModule', name: 'SchoolPage', segment: 'school', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/plans/plans.module#PlansPageModule', name: 'PlansPage', segment: 'plans', priority: 'low', defaultHistory: [] }
                 ]
             }),
             __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClientModule */],
@@ -680,7 +680,7 @@ let MyApp = class MyApp {
 };
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/staff/Desktop/ProjetsIonic/Ionic_CDDC/src/app/app.html"*/,
-        providers: [__WEBPACK_IMPORTED_MODULE_7__providers_data_data__["a" /* DataProvider */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_7__providers_data_data__["a" /* DataProvider */]],
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_onesignal__["a" /* OneSignal */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);

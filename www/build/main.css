@@ -26576,7 +26576,7 @@ img.darken {
 }
 
 img.small {
-  max-height: 38vh;
+  max-height: 37vh;
 }
 
 .card-background-page ion-card {
@@ -26638,6 +26638,10 @@ body > ion-app > ng-component > ion-nav > ng-component > super-tabs > super-tabs
 
 body > ion-app > ng-component > ion-nav > ng-component > super-tabs > super-tabs-container > div > super-tab:nth-child(3) > page-contact > ion-header > ion-navbar > div.toolbar-content.toolbar-content-ios > ion-title > div > ion-searchbar > div > input {
   padding-left: auto;
+}
+
+.test ion-grid {
+  min-height: 100% !important;
 }
 
 audio {
@@ -26805,6 +26809,20 @@ p > .undertext {
   text-align: justify;
 }
 
+.input-cover {
+  position: static;
+}
+
+.fabhidden {
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+  opacity: 0;
+}
+
+.fabshow {
+  opacity: 1;
+}
+
 .list .item.item-accordion {
   line-height: 38px;
   padding-top: 0;
@@ -26873,7 +26891,6 @@ header h2 {
 
 header {
   position: relative;
-  padding-top: 5px;
   display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;

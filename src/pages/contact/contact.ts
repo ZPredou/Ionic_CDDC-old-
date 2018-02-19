@@ -19,10 +19,10 @@ import * as firebase from 'firebase';
   ]
 })
 @Injectable()
-export class ContactPage implements OnInit {
+export class ContactPage{
   public oeuvres:any[] = [];
-  searchText='';
   public isLoaded=false;
+  searchText='';
   actualOeuvres:any[] = [];
 
   constructor(public nav: NavController ,private vibration: Vibration ,private http: HttpClient ,private _data: DataProvider ,public loading: LoadingController) {
@@ -42,19 +42,21 @@ export class ContactPage implements OnInit {
     });
     loader.dismiss()
   }
-  ngOnInit(){
-  }
+
   private vibrate(){
     this.vibration.vibrate([30]);
   }
+
   private goToDetail(oeuvre){
     this.nav.push(DetailPage , {
       oeuvre: oeuvre
     });
   }
+
   noneSelected(){
     return this.oeuvres.filter(oeuvre => oeuvre.isSelected).length===0;
   }
+
   onKey(e) {
         if (e.keyCode == 13) {
             let activeElement = <HTMLElement>document.activeElement;

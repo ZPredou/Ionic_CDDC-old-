@@ -17,7 +17,7 @@ const config = {
 };
 @Component({
   templateUrl: 'app.html',
-  providers: [DataProvider]
+  providers: [DataProvider],
 })
 export class MyApp {
   rootPage:any = TabsPage;
@@ -38,6 +38,7 @@ export class MyApp {
       });
       this._OneSignal.endInit();
     });
+
     firebase.initializeApp(config);
   }
 }

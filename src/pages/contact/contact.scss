@@ -56,3 +56,8 @@ body > ion-app > ng-component > ion-nav > ng-component > super-tabs > super-tabs
 body > ion-app > ng-component > ion-nav > ng-component > super-tabs > super-tabs-container > div > super-tab:nth-child(3) > page-contact > ion-header > ion-navbar > div.toolbar-content.toolbar-content-ios > ion-title > div > ion-searchbar > div > input{
   padding-left: auto;
 }
+.test {
+   ion-grid {
+        min-height: 100% !important;
+    }
+ }

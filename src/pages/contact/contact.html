@@ -6,14 +6,15 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="card-background-page">
-  <div *ngIf="oeuvres !==''; else elseBlock">
-    <ion-card [@fadeInOut] (click)="goToDetail(oeuvre); vibrate();" *ngFor="let oeuvre of oeuvres | search : terms">
-      <img src={{oeuvre.image}}/>
-      <div class="card-title">{{oeuvre.title}}</div>
-      <div class="card-subtitle">{{oeuvre.author}}</div>
-    </ion-card>
-  </div>
+<ion-content class="card-background-page test">
+  <ion-grid>
+    <div *ngIf="oeuvres !==''">
+      <ion-card [@fadeInOut] (click)="goToDetail(oeuvre); vibrate();" *ngFor="let oeuvre of oeuvres | search : terms">
+        <img src={{oeuvre.image}}/>
+        <div class="card-title">{{oeuvre.title}}</div>
+        <div class="card-subtitle">{{oeuvre.author}}</div>
+      </ion-card>
+    </div>
     <div *ngIf="(oeuvres | search: terms).length === 0" class="emptyState">
       <ion-card>
         <ion-card-header>
@@ -29,4 +30,5 @@
         </ion-card-content>
       </ion-card>
     </div>
+  </ion-grid>
 </ion-content>
