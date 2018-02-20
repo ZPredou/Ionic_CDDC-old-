@@ -1,4 +1,4 @@
-import { Component ,OnInit , Injectable, trigger, state, style, animate, transition} from '@angular/core';
+import { Component ,OnInit , Injectable, trigger, state, style, animate, transition } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Vibration } from '@ionic-native/vibration';
 import { DetailPage } from '../detail/detail';
@@ -24,23 +24,25 @@ export class ContactPage{
   public isLoaded=false;
   searchText='';
   actualOeuvres:any[] = [];
+  loader;
 
   constructor(public nav: NavController ,private vibration: Vibration ,private http: HttpClient ,private _data: DataProvider ,public loading: LoadingController) {
     this.nav = nav;
-      let loader = this.loading.create({
-        content: 'Récupération des oeuvres',
-      });
-      loader.present();
-      let that = this;
-      loader.present().then(() => {
-        this._data.oeuvres.subscribe((data) => {
+  }
+  ionViewDidLoad(){
+    let loader = this.loading.create({
+      content: 'Récupération des oeuvres',
+    });
+    loader.present();
+    let that = this;
+    loader.present().then(() => {
+      this._data.oeuvres.subscribe((data) => {
         that.oeuvres.push(data);
-      }, (err) => {
-        console.error(err);
-
+        if(this.oeuvres === that.oeuvres && loader){
+          loader.dismiss();
+        }
       });
     });
-    loader.dismiss()
   }
 
   private vibrate(){

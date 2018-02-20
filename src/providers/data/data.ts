@@ -4,7 +4,7 @@ import {ReplaySubject} from 'rxjs/ReplaySubject';
 @Injectable()
 export class DataProvider {
   private _oeuvres$: any;
-  private _db: any;
+  public _db: any;
   private _oeuvresRef: any;
 
   constructor() {
